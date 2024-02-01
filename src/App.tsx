@@ -1,22 +1,15 @@
-import { useState } from "react";
 import "./App.css";
-// DELETE LATER //
 import { useContext } from "react";
 import TaskContext from "./context/task-context";
-// END DELETE //
-
 import { Category } from "./components/Interfaces";
 import TableHeader from "./components/TableHeader";
 import RowHeader from "./components/RowHeader";
 
-import initialTasks from "./assets/initial-tasks.json";
-
 function App() {
-  const categories: Category[] = [];
-  initialTasks.map((category: Category, i) => (categories[i] = category));
-
   const { tasks } = useContext(TaskContext);
-  console.log("context", tasks);
+
+  const categories: Category[] = [];
+  tasks.map((category: Category, i) => (categories[i] = category));
 
   return (
     <>
