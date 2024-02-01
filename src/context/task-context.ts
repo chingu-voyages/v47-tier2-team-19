@@ -1,4 +1,5 @@
 import { createContext } from "react";
+import type { Category } from "../components/Interfaces";
 
 const TaskContext = createContext<TaskContextType>({
   tasks: [],
@@ -7,5 +8,5 @@ const TaskContext = createContext<TaskContextType>({
 export default TaskContext;
 
 interface TaskContextType {
-  tasks: string[];
+  tasks: Category[];
 }
